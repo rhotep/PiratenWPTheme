@@ -20,7 +20,7 @@
 class MenuEntryWidget extends WP_Widget {
 
     function MenuEntryWidget() {
-		$widget_ops = array( 'classname' => 'menu_entry', 'description' => 'A link meant to be placed into a menu of some kind.' );
+		$widget_ops = array( 'classname' => 'menu_entry', 'description' => 'A link meant to be placed into a menu of some kind. Make sure to use "http://" or "https://" for external links.' );
         parent::WP_Widget(false, $name = 'Menu Entry', $widget_ops);
     }
 
@@ -28,6 +28,10 @@ class MenuEntryWidget extends WP_Widget {
         extract( $args );
         $title = apply_filters('widget_title', $instance['title']);
         $url = apply_filters('widget_url', $instance['url']);
+
+		if(substr($url, 0, 4)!="http"){
+			$url=get_bloginfo('url')."/".$url;
+		}
        	
 		echo $before_widget;
 		if($title){
@@ -86,11 +90,12 @@ class SubmenuWidget extends WP_Widget {
         extract( $args );
         $title = apply_filters('widget_title', $instance['title']);
         $url = apply_filters('widget_title', $instance['url']);
+		$class = isset($instance['overlap']) ? 'class="overlap"' : "";
 
 		echo $before_widget; 
         if( $title ){
 			echo "$before_title <a href=\"$url\">$title</a> $after_title"; 	
-			echo "<ul>";
+			echo "<ul $class>";
 				dynamic_sidebar('submenu-'.$this->number);
 			echo "</ul>";
 			echo $after_widget;
@@ -101,22 +106,25 @@ class SubmenuWidget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['url'] = strip_tags($new_instance['url']);
+		$instance['overlap'] = isset($new_instance['overlap']);
         return $instance;
     }
 
     function form($instance) {				
         $title = esc_attr($instance['title']);
 		$url= esc_attr($instance['url']);
+		$overlap = esc_attr($instance['overlap']);
         ?>
             <p>
-				<label for="<?php echo $this->get_field_id('title'); ?>">
-					<?php _e('Title:'); ?> 
-					<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
-				</label>
-				<label for="<?php echo $this->get_field_id('url'); ?>">
-					<?php _e('URL:'); ?> 
-					<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
-				</label>
+				<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+
+				<label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL:'); ?></label> 
+				<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
+			</p>
+			<p>
+				<input class="checkbox" type="checkbox" <?php checked(isset($instance['overlap']) ? $instance['overlap'] : 0); ?> id="<?php echo $this->get_field_id('overlap'); ?>" name="<?php echo $this->get_field_name('overlap'); ?>" />
+				<label for="<?php echo $this->get_field_id('overlap'); ?>"><?php _e('Overlapping submenus'); ?></label>
 			</p>
         <?php 
     }

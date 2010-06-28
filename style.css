@@ -193,6 +193,7 @@ http://www.opensource.org/licenses/gpl-license.php
 			#top_panel a:hover {
 				color:#666;
 			}
+
 	
 			
 
@@ -220,30 +221,31 @@ http://www.opensource.org/licenses/gpl-license.php
 	}
 
 		#page {
+			float:left;
 			background-color: transparent;
 			color:#323232;
 			margin: 0px;
 			padding: 0;
 			padding-top:0px;
-			width: 560px;
+			width: 590px;
+			padding-left:30px;
 			line-height:1.6em;
 			text-align:justify;
 		}
 			#page h2 {
 				margin-bottom:30px;
-				margin-left:-1.5em;
-				border-bottom:solid 2px #ccc;
+				margin-left:-30px;
+				border-bottom:solid 3px #ccc;
 				padding-bottom:0.6em;
 				color:#666;
 			}
 
 		#sidebar {
-			position:absolute;
-			right:0;
-			top:2em;
+			float:right;
+			margin: 0px;
+			margin-top:2em;
 			padding: 0;
 			padding-top:0px;
-			margin: 0px;
 			text-align:left;
 			width:30%;
 		}
@@ -260,15 +262,15 @@ http://www.opensource.org/licenses/gpl-license.php
 
 		#footer_sub_content {
 			width:100%;
-			height:20px;
+			height:16px;
 			bottom:0px;
 			left:0px;		
 			background: #fff url('images/header_bg_pattern.png') repeat-x 0% 0%;
 			border-top: 4px solid #000;
-				color:#fff;
+			color:#fff;
 			font-size:12px;
 			font-weight:bold;
-			line-height:20px;
+			line-height:16px;
 			z-index:1;
 		}
 
@@ -288,6 +290,28 @@ http://www.opensource.org/licenses/gpl-license.php
 
 		#footer_img_right {
 		}
+
+		#bottom_panel {
+			left:0px;
+			height: 100px;
+			display:block;
+			vertical-align:50%;
+			line-height:100px;
+			text-align:left;
+			padding-left:7%;
+		}
+			#bottom_panel a {
+				font-size:140%;				
+				font-family:impact, sans-serif;
+				color:#aaa;
+				text-decoration:none;
+				margin-right:3%;
+			}
+
+			#bottom_panel a:hover {
+				color:#666;
+			}
+	
 
 /* Sidebar */
 
@@ -386,11 +410,17 @@ http://www.opensource.org/licenses/gpl-license.php
 	#main_menu  li > ul{
 		position:absolute;
 		top:-10px;
-		left:95%;
+		left:100%;
 		display:none;
 		z-index:15;
 		padding:0px;
 		margin:0px;
+		padding-left:3px;
+	}
+
+	#main_menu  li > ul.overlap{
+		margin-left:-10px;
+		padding:0px;		
 	}
 
 
@@ -500,6 +530,13 @@ http://www.opensource.org/licenses/gpl-license.php
 		font-style:normal;
 		font-size:0.8em;
 	}
+
+/* Pages */
+
+	.page {
+		margin-bottom:1em;
+	}
+
 
 
 
@@ -727,17 +764,6 @@ a:hover {
 	clear: both;
 }
 
-#footer p {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	color:#fff;
-	font-weight:bold;
-}
-
-#footer a {
-	color:#000;
-}
 
 /* End Structure */
 

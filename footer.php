@@ -21,6 +21,17 @@
 			<div id="footer_img_right"></div>
 			<div id="footer_img_left"></div>		
 			<div id="footer_main_content">
+				<div id="bottom_panel">
+					<?php 	/* Widgetized menubar, if you have the dynamic sidebar plugin installed. */
+						$works=false;
+						if(function_exists('dynamic_sidebar')){ 
+							$works = dynamic_sidebar('Bottom Panel');
+						} 
+						if(!works){
+							echo "dynamic sidebars for Bottom Panel don't work :(";
+						}
+					?>	
+				</div>
 			</div>
 			<div id="footer_sub_content">
 				<?php bloginfo('name'); ?> is proudly powered by

@@ -19,7 +19,7 @@ get_header();
 	?>	
 
 	<h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-	<div class="storysubscript">von <?php the_author() ?> @ <?php the_time() ?> <span class="edit"> (<?php edit_post_link(__('Edit This')); ?>)</span></div>
+	<div class="storysubscript">von <?php the_author() ?> @ <?php the_time() ?> <span class="edit"> <?php edit_post_link(__('Edit This')); ?></span></div>
 
 	<div class="storycontent">
 		<?php the_content(__('(more...)')); ?>

@@ -40,7 +40,7 @@ if ( empty($withcomments) && !is_single() ) {
 			<div id="header_img_right"></div>
 			<div id="header_img_left"></div>
 			<div id="header_main_content">
-				<h1 id="heading"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+				<h1 id="heading"><a href="<?php echo get_option('home'); ?>/"><img src="<?php bloginfo('template_directory'); ?>/title_image.php?title=<?php bloginfo('name'); ?>" alt="<?php bloginfo('name'); ?>"/></a></h1>
 			</div>
 			<div id="header_sub_content">
 				<div class="join">Werde Pirat</div>
