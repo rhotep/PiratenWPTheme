@@ -133,7 +133,8 @@ http://www.opensource.org/licenses/gpl-license.php
 				font-family:"Arial Black", sans-serif; 
 			}
 	
-		#header_sub_content{	
+		#header_sub_content{
+			width:100%;	
 			position:absolute;
 			z-index:5;
 			top:44px;
@@ -149,7 +150,7 @@ http://www.opensource.org/licenses/gpl-license.php
 
 
 		#header .join {
-			font-size: 12px;
+			font-size: 13px;
 			text-align: left;
 			margin-left:41px;
 			font-weight:bold;
@@ -201,7 +202,7 @@ http://www.opensource.org/licenses/gpl-license.php
 		padding-bottom:40px;	
 		position:relative;
 		margin:auto;
-		width:85%;
+		width:95%;
 		max-width:1024px;
 		z-index:0;
 	}
@@ -273,6 +274,9 @@ http://www.opensource.org/licenses/gpl-license.php
 			line-height:16px;
 			z-index:1;
 		}
+			#footer_sub_content a{
+				color:#000;
+			}
 
 
 		#footer_img_left {
@@ -512,6 +516,63 @@ http://www.opensource.org/licenses/gpl-license.php
 		background:transparent url('images/corners_000_60.png') no-repeat 100% 0%;
 	}
 
+/* Search box*/
+
+	#search_box{
+		float:right !important;
+		margin-right:126px;
+	}
+
+		#search_box div{
+			position:relative;
+			width:190px;
+			height:20px;
+		}
+
+		#search_box form {
+			padding:0px;
+			margin:0px;
+		}
+
+			#search_box input[type=text] {
+				position:absolute;
+				top:3px;
+				left:0px;
+				font-size:11px;
+				font-weight:normal;
+				color:#fff;
+				background: transparent url('images/color_fff_30.png');
+				border:none;
+				height:13px;
+				width:120px;
+				padding-left:3px;
+				padding-right:3px;
+			}
+
+			#search_box input[type=text]:hover {
+				background: transparent url('images/color_fff_50.png');
+			}
+
+			#search_box input[type=submit] {
+				position:absolute;
+				top:0px;
+				height:20px;
+				left:129px;
+				font-size:12px;
+				font-weight:bold;
+				color:#fff;
+				padding-left:3px;
+				padding-right:5px;
+				background: transparent url('images/color_000_25.png');
+				border: none;
+			}
+
+			#search_box	input[type=submit]:hover {
+				background: transparent url('images/color_000_50.png');
+				cursor:pointer;
+			}
+
+
 /* Post	*/
 
 	.post .storytitle {	
@@ -539,7 +600,78 @@ http://www.opensource.org/licenses/gpl-license.php
 
 
 
+/* Comments */
 
+	fieldset.comments{
+		border:none;
+		border-top:dotted 3px #ccc;
+		margin-left:-30px;
+		padding:0px;
+		padding-left:30px;
+	}
+
+	legend.comments{
+		font-size:130%;
+		color:#666;
+		padding:0px 5px;
+		margin-left:-5px;
+		font-weight:bold;
+	}
+
+	#commentlist {
+		margin:1em 0px;
+		padding:0px;
+		list-style:none;
+	}
+
+	#commentlist .user_info{
+		float:left;
+		font-family: "Linux Libertine",Georgia,"Times New Roman",Times,serif;
+		font-style:italic;
+		width:25%;
+
+	}
+
+	#commentlist .user_info .author{
+		float:left;
+		line-height:1.4em;
+	}
+
+	#commentlist .user_info .avatar{
+		float:left;
+		border: 1px solid #eee;
+		background: #fff;
+		margin-right:5px;
+	}
+
+
+	#commentlist .text{
+		float:right;
+		width:74%;		
+	}
+
+
+	.comment.even {
+		border-bottom:1px dashed #ccc;		
+	}
+
+	.comment.odd {
+		border-bottom:1px dashed #ccc;
+	}
+
+	comment.depth-1 {
+	}
+
+	.comment p{
+		margin-top:0px;
+		margin-bottom:5px;
+	}
+
+
+
+
+
+	
 
 /* Begin Typography & Colors */
 
@@ -560,20 +692,6 @@ http://www.opensource.org/licenses/gpl-license.php
 	text-align: center;
 	}
 
-.thread-alt {
-	background-color: #f8f8f8;
-}
-.thread-even {
-	background-color: white;
-}
-.depth-1 {
-border: 1px solid #ddd;
-}
-
-.even, .alt {
-
-	border-left: 1px solid #ddd;
-}
 
 
 small {	
@@ -590,6 +708,10 @@ small {
 	blockquote, em, h1, h3, h5, i, .feedBy  {
 		font-family:"Linux Libertine", Georgia, "Times New Roman", Times, serif;
 	}
+	
+	h3 a {
+		color:#000;
+	}
 
 	h4 {
 		font-size: .9em;
@@ -600,28 +722,13 @@ small {
 	}
 
 
-
-
-h2.pagetitle {
-	font-size: 1.6em;
-}
-
-#sidebar h2 {
-	font-family: 'Lucida Grande', Verdana, Sans-Serif;
-	font-size: 1.2em;
-	}
-
-
 	h1, h1 a, h1 a:hover, h1 a:visited, #header .description {
 		text-decoration: none;
 		color: white;
 	}
 
-h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
-	color: #333;
-}
 
-h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar h2, #wp-calendar caption, cite {
+#wp-calendar caption, cite {
 	text-decoration: none;
 	}
 
@@ -637,43 +744,7 @@ h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar
 	padding-top: 10px;
 	}
 
-.commentlist li, #commentform input, #commentform textarea {
-	font: 0.9em 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	}
-.commentlist li ul li {
-	font-size: 1em;
-}
 
-.commentlist li {
-	font-weight: bold;
-}
-
-.commentlist li .avatar { 
-	float: right;
-	border: 1px solid #eee;
-	padding: 2px;
-	background: #fff;
-	}
-
-.commentlist cite, .commentlist cite a {
-	font-weight: bold;
-	font-style: normal;
-	font-size: 1.1em;
-	}
-
-.commentlist p {
-	font-weight: normal;
-	line-height: 1.5em;
-	text-transform: none;
-	}
-
-#commentform p {
-	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	}
-
-.commentmetadata {
-	font-weight: normal;
-	}
 
 
 small, .nocomments, .postmetadata, blockquote, strike {
@@ -790,10 +861,6 @@ h3 {
 	margin: 0;
 	}
 
-h3.comments {
-	padding: 0;
-	margin: 40px auto 20px ;
-	}
 /* End Headers */
 
 
@@ -962,48 +1029,7 @@ select {
 
 
 
-/* Begin Comments*/
-.alt {
-	margin: 0;
-	padding: 10px;
-	}
 
-.commentlist {
-	padding: 0;
-	text-align: justify;
-	}
-
-.commentlist li {
-	margin: 15px 0 10px;
-	padding: 5px 5px 10px 10px;
-	list-style: none;
-
-	}
-.commentlist li ul li { 
-	margin-right: -5px;
-	margin-left: 10px;
-}
-
-.commentlist p {
-	margin: 10px 5px 10px 0;
-}
-.children { padding: 0; }
-
-#commentform p {
-	margin: 5px 0;
-	}
-
-.nocomments {
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	}
-
-.commentmetadata {
-	margin: 0;
-	display: block;
-	}
-/* End Comments */
 
 
 

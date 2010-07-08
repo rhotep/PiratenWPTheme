@@ -55,7 +55,10 @@ if ( empty($withcomments) && !is_single() ) {
 						}
 					?>	
 				</div>
-				<div class="description"><?php bloginfo('description'); ?></div>
+				<!--<div class="description"><?php bloginfo('description'); ?></div>--!>
+				<div id="search_box">
+					<?php get_search_form(); ?> 
+				</div>
 			</div>			
 			<div id="logo"></div>
 			<div id="top_panel">

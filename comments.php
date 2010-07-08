@@ -8,35 +8,54 @@ if ( post_password_required() ) : ?>
 <p><?php _e('Enter your password to view comments.'); ?></p>
 <?php return; endif; ?>
 
-<h2 id="comments"><?php comments_number(__('No Comments'), __('1 Comment'), __('% Comments')); ?>
-<?php if ( comments_open() ) : ?>
-	<a href="#postcomment" title="<?php _e("Leave a comment"); ?>">&raquo;</a>
-<?php endif; ?>
-</h2>
 
-<?php if ( have_comments() ) : ?>
-<ol id="commentlist">
 
-<?php foreach ($comments as $comment) : ?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-	<?php echo get_avatar( $comment, 32 ); ?>
-	<?php comment_text() ?>
-	<p><cite><?php comment_type(_x('Comment', 'noun'), __('Trackback'), __('Pingback')); ?> <?php _e('by'); ?> <?php comment_author_link() ?> &#8212; <?php comment_date() ?> @ <a href="#comment-<?php comment_ID() ?>"><?php comment_time() ?></a></cite> <?php edit_comment_link(__("Edit This"), ' |'); ?></p>
-	</li>
+<fieldset class="comments">
+	<legend class="comments"><?php comments_number(__('No Comments'), __('1 Comment'), __('% Comments')); ?>
+	<?php if ( comments_open() ) : ?>
+		<!-- <a href="#postcomment" title="<?php _e("Leave a comment"); ?>">	&darr;</a> -->
+	<?php endif; ?>
+	</legend>
 
-<?php endforeach; ?>
+	<?php if ( have_comments() ) : ?>
+	<ul id="commentlist">
+	
+	<?php foreach ($comments as $comment) : ?>
+		<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+			<div class="clear">&nbsp;</div>
+			<div class="user_info">
+				<?php echo get_avatar( $comment, 32 ); ?>
+				<div class="author">
+					<?php comment_type(_x('Comment', 'noun'), __('Trackback'), __('Pingback')); ?> <?php _e('by'); ?><br /> 
+					<?php comment_author_link() ?> 
+				</div>
+				<div class="clear">&nbsp;</div>
 
-</ol>
+				<?php comment_date() ?> @ <a href="#comment-<?php comment_ID() ?>"><?php comment_time() ?></a><br />
+				<?php edit_comment_link(__("Edit This")); ?>
+			</div>		
+			<div class="text">
+						<?php comment_text() ?>
+			</div>		
+			<div class="clear">&nbsp;</div>
+		</li>
 
-<?php else : // If there are no comments yet ?>
-	<p><?php _e('No comments yet.'); ?></p>
-<?php endif; ?>
+	<?php endforeach; ?>
 
-<p><?php post_comments_feed_link(__('<abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.')); ?>
-<?php if ( pings_open() ) : ?>
-	<a href="<?php trackback_url() ?>" rel="trackback"><?php _e('TrackBack <abbr title="Universal Resource Locator">URL</abbr>'); ?></a>
-<?php endif; ?>
-</p>
+	</ul>
+
+	<?php else : // If there are no comments yet ?>
+		<p><?php _e('No comments yet.'); ?></p>
+	<?php endif; ?>
+	
+	<p><?php post_comments_feed_link(__('<abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.')); ?>
+	<?php if ( pings_open() ) : ?>
+		<a href="<?php trackback_url() ?>" rel="trackback"><?php _e('TrackBack <abbr title="Universal Resource Locator">URL</abbr>'); ?></a>
+	<?php endif; ?>
+	</p>
+</fieldset>
+
+
 
 <?php if ( comments_open() ) : ?>
 <h2 id="postcomment"><?php _e('Leave a comment'); ?></h2>
