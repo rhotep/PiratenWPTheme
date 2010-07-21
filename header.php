@@ -44,8 +44,6 @@ if ( empty($withcomments) && !is_single() ) {
 			</div>
 			<div id="header_sub_content">
 				<div id="main_menu">
-					<table>
-						<tr>
 							<?php 	/* Widgetized menubar, if you have the dynamic sidebar plugin installed. */
 								$works=false;
 								if(function_exists('dynamic_sidebar')){ 
@@ -54,9 +52,7 @@ if ( empty($withcomments) && !is_single() ) {
 								if(!works){
 									echo "dynamic sidebars for Main Menu don't work :(";
 								}			
-							?>	
-						</tr>
-					</table>
+							?>
 				</div>
 				<!--<div class="description"><?php bloginfo('description'); ?></div>-->
 				<div id="search_box">

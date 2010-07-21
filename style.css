@@ -343,9 +343,9 @@ http://www.opensource.org/licenses/gpl-license.php
 	font-size: 13px;
 	text-align: left;
 	position:absolute;
-	left:0px;	
-	width:76%;
-	max-width:800px;
+	left:0px;
+	right:15%;	
+	white-space:nowrap;
 }
 
 	#main_menu a {	
@@ -354,24 +354,15 @@ http://www.opensource.org/licenses/gpl-license.php
 		text-decoration:none;
 	}
 
-	#main_menu table{
-		width:100%;		
-	}
-
-	#main_menu td {
-		white-space:nowrap;
-		padding:0px;
-	}
-
-	#main_menu td > div {
+	#main_menu > div {
 		position:relative;
-		padding: 0px;
-		padding-left:0.5em;
+		display:inline;
+		padding:2px 1.5% 2px 3px;
 		font-weight:bold;
 		color:#fff;	
 	}
 
-	#main_menu td > div:hover {
+	#main_menu > div:hover {
 		background:transparent url('images/color_000_25.png');
 	}
 
@@ -519,41 +510,47 @@ http://www.opensource.org/licenses/gpl-license.php
 	div#search_box{
 		position:absolute;
 		right:0px;
+		left:85%;
 	}
 
 		#search_box div{
-			display:inline;
+			position:absolute;
 			height:20px;
-			float:right;
 		}
 
 		#search_box form {
 			padding:0px;
 			margin:0px;
+			height:20px;
 		}
 
-			#search_box input[type=text] {
-				position:relative;
-				top:3px;
+			#search_box div.text{
 				left:0px;
-				font-size:11px;
-				font-weight:normal;
-				color:#fff;
-				background: transparent url('images/color_fff_30.png');
-				border:none;
-				height:13px;
-				width:120px;
-				padding-left:3px;
-				padding-right:3px;
-				margin-right:3px;
-				font-weight:bold;
+				right:43px;
 			}
 
-			#search_box input[type=text]:hover {
-				background: transparent url('images/color_fff_50.png');
-			}
+				#search_box input[type=text]:hover {
+						background: transparent url('images/color_fff_50.png');
+				}
+
+				#search_box input[type=text] {
+					position:relative;
+					top:3px;
+					left:0px;
+					width:100%;
+					font-size:11px;
+					color:#fff;
+					background: transparent url('images/color_fff_30.png');
+					border:none;
+					height:14px;
+					padding:0px;
+					margin:0px;
+					font-weight:bold;
+				}
 
 			#search_box div.submit{
+				right:0px;
+				width: 40px;
 				background:transparent url('images/color_000_25.png');
 				cursor:pointer;
 			}
@@ -562,20 +559,27 @@ http://www.opensource.org/licenses/gpl-license.php
 				background: transparent url('images/color_000_50.png');
 			}
 
+				#search_box input[type=submit] {
+					display:inline;
+					height:20px;
+					width:40px;
+					font-size:12px;
+					font-weight:bold;
+					color:#fff;
+					padding-left:3px;
+					padding-right:5px;
+					background: transparent url('images/magnifier.png') no-repeat 50% 2px;
+					border: none;
+					cursor:pointer;
+				}
 
-			#search_box input[type=submit] {
-				display:inline;
-				height:20px;
-				width:40px;
-				font-size:12px;
-				font-weight:bold;
-				color:#fff;
-				padding-left:3px;
-				padding-right:5px;
-				background: transparent url('images/magnifier.png') no-repeat 50% 2px;
-				border: none;
-				cursor:pointer;
-			}
+
+
+
+
+
+
+
 
 
 
