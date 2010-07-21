@@ -344,7 +344,7 @@ http://www.opensource.org/licenses/gpl-license.php
 	text-align: left;
 	position:absolute;
 	left:0px;	
-	width:72.5%;
+	width:76%;
 	max-width:800px;
 }
 
@@ -360,6 +360,7 @@ http://www.opensource.org/licenses/gpl-license.php
 
 	#main_menu td {
 		white-space:nowrap;
+		padding:0px;
 	}
 
 	#main_menu td > div {
@@ -552,22 +553,30 @@ http://www.opensource.org/licenses/gpl-license.php
 				background: transparent url('images/color_fff_50.png');
 			}
 
+			#search_box div.submit{
+				background:transparent url('images/color_000_25.png');
+				cursor:pointer;
+			}
+
+			#search_box	div.submit:hover {
+				background: transparent url('images/color_000_50.png');
+			}
+
+
 			#search_box input[type=submit] {
 				display:inline;
 				height:20px;
+				width:40px;
 				font-size:12px;
 				font-weight:bold;
 				color:#fff;
 				padding-left:3px;
 				padding-right:5px;
-				background: transparent url('images/color_000_25.png');
+				background: transparent url('images/magnifier.png') no-repeat 50% 2px;
 				border: none;
-			}
-
-			#search_box	input[type=submit]:hover {
-				background: transparent url('images/color_000_50.png');
 				cursor:pointer;
 			}
+
 
 
 /* Post	*/
