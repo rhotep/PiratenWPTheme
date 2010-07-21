@@ -36,14 +36,17 @@ class MenuEntryWidget extends WP_Widget {
 		echo $before_widget;
 		if($title){
 			echo "$before_title<a href=\"$url\">$title</a>$after_title"; 
-			echo $after_widget;
 		}
+		echo $after_widget;
     }
 
     function update($new_instance, $old_instance) {				
-	$instance = $old_instance;
-	$instance['title'] = strip_tags($new_instance['title']);
-	$instance['url'] = strip_tags($new_instance['url']);
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+		$instance['url'] = strip_tags($new_instance['url']);
+		
+			$instance['classname'] = 'blub';
+		
         return $instance;
     }
 
@@ -66,6 +69,12 @@ class MenuEntryWidget extends WP_Widget {
 
 } // class MenuEntryWidget
 
+
+/**
+ * SubmenuWidget Class
+
+ */
+
 class SubmenuWidget extends WP_Widget {
 
     function SubmenuWidget() {
@@ -74,10 +83,11 @@ class SubmenuWidget extends WP_Widget {
 		$submenus=$this->get_settings();
 		foreach($submenus as $key => $submenu){
 			if (array_key_exists('title',$submenu)){
+				$class = $submenu['overlap'] ? 'overlap' : "";
 			    register_sidebar(array(
 					'name' => 'Submenu: '.$submenu['title'],
 					'id' => 'submenu-'.$key,
-    			    'before_widget' => '<li id="%1$s" class="widget %2$s">',
+    			    'before_widget' => '<li id="%1$s" class="widget %2$s '.$class.'">',
     			    'after_widget' => '</li>',
     			    'before_title' => '',
     			    'after_title' => '',
@@ -90,16 +100,16 @@ class SubmenuWidget extends WP_Widget {
         extract( $args );
         $title = apply_filters('widget_title', $instance['title']);
         $url = apply_filters('widget_title', $instance['url']);
-		$class = isset($instance['overlap']) ? 'class="overlap"' : "";
 
+	
 		echo $before_widget; 
         if( $title ){
 			echo "$before_title <a href=\"$url\">$title</a> $after_title"; 	
 			echo "<ul $class>";
 				dynamic_sidebar('submenu-'.$this->number);
-			echo "</ul>";
-			echo $after_widget;
+			echo "</ul>";			
 		}
+		echo $after_widget;
     }
 
     function update($new_instance, $old_instance) {				
@@ -131,6 +141,10 @@ class SubmenuWidget extends WP_Widget {
 
 } // class SubmenuWidget
 
+/**
+ * MenuFooterWidget Class
+
+ */
 
 class MenuFooterWidget extends WP_Widget {
 
@@ -159,6 +173,12 @@ class MenuFooterWidget extends WP_Widget {
     }
 
 } // class MenuFooterWidget
+
+
+/**
+ * MenuHeaderWidget Class
+
+ */
 
 class MenuHeaderWidget extends WP_Widget {
 

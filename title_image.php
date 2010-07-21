@@ -12,7 +12,7 @@ imagefill($im, 0, 0, $transparent);
 $text = $_GET['title'];
 $font = './dirtyheadline.ttf';
 
-imagettftext($im, 28, 0, 0, 36, $white, $font, $text);
+imagettftext($im, 24, 0, 0, 34, $white, $font, $text);
 
 header('Content-type: image/png');
 imagepng($im);

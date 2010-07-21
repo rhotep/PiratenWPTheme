@@ -43,21 +43,28 @@ if ( empty($withcomments) && !is_single() ) {
 				<h1 id="heading"><a href="<?php echo get_option('home'); ?>/"><img src="<?php bloginfo('template_directory'); ?>/title_image.php?title=<?php bloginfo('name'); ?>" alt="<?php bloginfo('name'); ?>"/></a></h1>
 			</div>
 			<div id="header_sub_content">
-				<div class="join">Werde Pirat</div>
 				<div id="main_menu">
-					<?php 	/* Widgetized menubar, if you have the dynamic sidebar plugin installed. */
-						$works=false;
-						if(function_exists('dynamic_sidebar')){ 
-							$works = dynamic_sidebar('Main Menu');
-						} 
-						if(!works){
-							echo "dynamic sidebars for Main Menu don't work :(";
-						}
-					?>	
+					<table>
+						<tr>
+							<?php 	/* Widgetized menubar, if you have the dynamic sidebar plugin installed. */
+								$works=false;
+								if(function_exists('dynamic_sidebar')){ 
+									$works = dynamic_sidebar('Main Menu');
+								} 
+								if(!works){
+									echo "dynamic sidebars for Main Menu don't work :(";
+								}			
+							?>	
+						</tr>
+					</table>
 				</div>
-				<!--<div class="description"><?php bloginfo('description'); ?></div>--!>
+				<!--<div class="description"><?php bloginfo('description'); ?></div>-->
 				<div id="search_box">
-					<?php get_search_form(); ?> 
+					<form action="http://testing.studentsweb.de/piratenblog/" id="searchform" method="get" role="search">
+						<label for="s" class="screen-reader-text">Search for:</label>
+						<div class="submit"><input type="submit" value="Search" id="searchsubmit"></div>						
+						<div class="text"><input type="text" id="s" name="s" value=""></div>
+					</form> 				
 				</div>
 			</div>			
 			<div id="logo"></div>
