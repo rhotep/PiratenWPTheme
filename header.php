@@ -56,7 +56,7 @@ if ( empty($withcomments) && !is_single() ) {
 				</div>
 				<!--<div class="description"><?php bloginfo('description'); ?></div>-->
 				<div id="search_box">
-					<form action="http://testing.studentsweb.de/piratenblog/" id="searchform" method="get" role="search">
+					<form action="<?php bloginfo('url') ?>" id="searchform" method="get" role="search">
 						<label for="s" class="screen-reader-text">Search for:</label>
 						<div class="submit" title="<?php _e('search');?>"><input type="submit" value="" id="searchsubmit"/></div>						
 						<div class="text"><input type="text" id="s" name="s" value=""/></div>

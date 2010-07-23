@@ -542,7 +542,7 @@ http://www.opensource.org/licenses/gpl-license.php
 					color:#fff;
 					background: transparent url('images/color_fff_30.png');
 					border:none;
-					height:14px;
+					height:16px;
 					padding:0px;
 					margin:0px;
 					font-weight:bold;
@@ -636,8 +636,8 @@ http://www.opensource.org/licenses/gpl-license.php
 
 	#commentlist .user_info{
 		float:left;
-		font-family: "Linux Libertine",Georgia,"Times New Roman",Times,serif;
-		font-style:italic;
+		/*font-family: "Linux Libertine",Georgia,"Times New Roman",Times,serif;
+		font-style:italic;*/
 		width:25%;
 
 	}
