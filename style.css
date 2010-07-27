@@ -357,7 +357,7 @@ http://www.opensource.org/licenses/gpl-license.php
 	#main_menu > div {
 		position:relative;
 		display:inline;
-		padding:2px 1.5% 2px 3px;
+		padding:2px 1.25% 2px 0.75%;
 		font-weight:bold;
 		color:#fff;	
 	}

@@ -104,7 +104,7 @@ class SubmenuWidget extends WP_Widget {
 	
 		echo $before_widget; 
         if( $title ){
-			echo "$before_title <a href=\"$url\">$title</a> $after_title"; 	
+			echo "$before_title<a href=\"$url\">$title</a> $after_title"; 	
 			echo "<ul $class>";
 				dynamic_sidebar('submenu-'.$this->number);
 			echo "</ul>";			
