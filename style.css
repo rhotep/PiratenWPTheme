@@ -18,6 +18,8 @@ http://www.opensource.org/licenses/gpl-license.php
 
 	html {
 		height:100%;
+		margin:0px;
+		padding:0px;
 	}
 
 	body {
@@ -114,6 +116,7 @@ http://www.opensource.org/licenses/gpl-license.php
 			z-index:4;
 		}
 
+
 		#header_main_content{
 			position:absolute;
 			height:44px;
@@ -147,8 +150,6 @@ http://www.opensource.org/licenses/gpl-license.php
 			vertical-align:middle;
 			z-index:10;
 		}
-
-
 	
 		#header .description {
 			font-size: 12px;
@@ -580,6 +581,20 @@ http://www.opensource.org/licenses/gpl-license.php
 
 
 
+/* 'Edit this' Button */
+
+	.edit {
+		float:right;
+		font-family:sans-serif;
+		font-style:normal;
+		font-size:12px;
+		font-weight:normal;
+	}
+
+	.edit a{
+		color:#06c;
+		font-weight:normal;
+	}
 
 
 
@@ -595,12 +610,6 @@ http://www.opensource.org/licenses/gpl-license.php
 		color:#666;
 	}
 
-	.post .edit {
-		float:right;
-		font-family:sans-serif;
-		font-style:normal;
-		font-size:0.8em;
-	}
 
 /* Pages */
 
@@ -679,11 +688,67 @@ http://www.opensource.org/licenses/gpl-license.php
 
 
 
+/* Headings */
 
+	h1, h1 a, h1 a:hover, h1 a:visited, #header .description {
+		text-decoration: none;
+		color: white;
+		padding-top: 0px;
+		margin: 0;
+	}
+
+	h2 {
+		margin: 0;
+		color:#666;
+	}
+
+
+	h2 a {
+		color:#666;
+	}
+
+	h3 {
+		padding: 0;
+		margin: 0;
+	}
+
+
+	h2, h4, h6, body {
+		font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+		margin:0px;
+	}
+ 
+	blockquote, em, h1, h3, h5, i, .feedBy  {
+		font-family:"Linux Libertine", Georgia, "Times New Roman", Times, serif;
+	}
 
 	
+	h3 a {
+		color:#000;
+	}
+
+	h2 a:hover, h3 a:hover {
+	color: #06c;
+	text-decoration: none;
+	}
+
+	h4 {
+		font-size: .9em;
+		text-transform: uppercase;
+		color: #2575ad;
+		letter-spacing: 1px;
+		font-weight: bold;
+	}
+
+
+
 
 /* Begin Typography & Colors */
+
+	a {
+		color:#06c;
+		text-decoration:none;
+	}
 
 
 .widecolumn .entry p {
@@ -710,32 +775,7 @@ small {
 	line-height: 1.5em;
 }
 
-	h2, h4, h6, body {
-		font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-		margin:0px;
-	}
- 
-	blockquote, em, h1, h3, h5, i, .feedBy  {
-		font-family:"Linux Libertine", Georgia, "Times New Roman", Times, serif;
-	}
-	
-	h3 a {
-		color:#000;
-	}
 
-	h4 {
-		font-size: .9em;
-		text-transform: uppercase;
-		color: #2575ad;
-		letter-spacing: 1px;
-		font-weight: bold;
-	}
-
-
-	h1, h1 a, h1 a:hover, h1 a:visited, #header .description {
-		text-decoration: none;
-		color: white;
-	}
 
 
 #wp-calendar caption, cite {
@@ -771,10 +811,7 @@ acronym, abbr, span.caps
 	letter-spacing: .07em;
 	}
 
-a, h2 a:hover, h3 a:hover {
-	color: #06c;
-	text-decoration: none;
-	}
+
 
 a:hover {
 	color: #147;
@@ -849,29 +886,6 @@ a:hover {
 /* End Structure */
 
 
-
-/*	Begin Headers */
-h1 {
-	padding-top: 0px;
-	margin: 0;
-	}
-
-h2 {
-	margin: 0;
-	}
-
-h2.pagetitle {
-	margin-top: 30px;
-	text-align: center;
-}
-
-
-h3 {
-	padding: 0;
-	margin: 0;
-	}
-
-/* End Headers */
 
 
 
@@ -1036,20 +1050,6 @@ select {
 	float: right;
 	}
 /* End Form Elements */
-
-
-
-
-
-
-
-/* Begin Sidebar */
-
-#sidebar form {
-	margin: 0;
-	}
-/* End Sidebar */
-
 
 
 /* Begin Calendar */

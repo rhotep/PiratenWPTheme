@@ -12,9 +12,7 @@ get_header();
 <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
 
-
-<div align='right'><?php edit_post_link(__('Edit This')); ?></div>
-	<h2 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>
+	<h2 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a><span class="edit"> <?php edit_post_link(__('Edit This')); ?></span></h2>
 
 	<div class="storycontent">
 		<?php the_content(__('(more...)')); ?>
