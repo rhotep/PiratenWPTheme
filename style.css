@@ -598,6 +598,12 @@ http://www.opensource.org/licenses/gpl-license.php
 		padding-bottom:1ex;	
 	}
 
+/*Images in content*/
+
+	#content img{
+		margin:1em 0;
+	}
+
 
 /* 'Edit this' Button */
 
