@@ -577,8 +577,26 @@ http://www.opensource.org/licenses/gpl-license.php
 
 
 
+/*Tables in content*/
 
+	#content table{
+		margin:1em 0;
+	}
 
+	#content thead tr{
+		border-bottom:1px solid #ccc;
+	}
+
+	#content thead th{
+		font-variant:small-caps;
+		font-weight:bold;
+	}
+	
+	#content tbody td{
+		padding-right: 2em;
+		padding-top: 1ex;
+		padding-bottom:1ex;	
+	}
 
 
 /* 'Edit this' Button */
