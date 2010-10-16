@@ -590,6 +590,7 @@ http://www.opensource.org/licenses/gpl-license.php
 	#content thead th{
 		font-variant:small-caps;
 		font-weight:bold;
+		text-align:left;
 	}
 	
 	#content tbody td{
